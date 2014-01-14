@@ -31,10 +31,8 @@ an implementation of AMQP (in Erlang)
 an implementation of AMQP (in Java)
 
 
-##Terminology
-(mix code samples in here to demonstrate the different bits)
-Some Rabbit terminology
-http://www.rabbitmq.com/tutorials/amqp-concepts.html
+##Some Rabbit terminology
+[http://www.rabbitmq.com/tutorials/amqp-concepts.html](http://www.rabbitmq.com/tutorials/amqp-concepts.html)
 
 A **broker**
 _is a machine or cluster running the RabbitMQ server_
