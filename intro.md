@@ -42,9 +42,8 @@ conn = Bunny.new(:hostname => "rabbit.local")
 # => #<Bunny::Session:0x007f873ab79dc8>
 conn.start
 ```
-
 A **publisher**
-publishes a message to an **exchange**, usually with a routing key
+publishes a message to an **exchange**
 
 ```
 ch = conn.create_channel
@@ -52,8 +51,7 @@ q = ch.queue("cheeses")
 #<Bunny::Queue:0x007f8739b0fc58>
 ```
 
-An **exchange** has a type
-which is **direct**, **fanout**, or **topic** and determines how the routing key is used
+An **exchange** has a type (**direct**, **fanout**, or **topic**) and determines how the routing key is used
 
 ```
 exchange = ch.direct('world_of_cheeses') 
@@ -66,14 +64,14 @@ A **queue** is bound to an **exchange** with a **routing key**
 queue.bind(exchange, :routing_key => 'aged')
 ```
 
-The binding is persistent. Future messages published to the exchange will be routed to the queue until the binding is broken.
+Queues, echanges, and bindings are persistent. Future messages published to the exchange will be routed to the queue until the binding is broken.
 
 A **consumer** subscribes to a queue with a routing key.
 
 ```
 queue.bind(x, :routing_key => 'aged').subscribe do |delivery_info, metadata, payload|
   puts "#{payload} => aaron"
-  ch.acknowledge(delivery_info.delivery_tag)
+  ch.acknowledge(delivery_info.delivery_tag) # explicit acknowledgement
 end
 ```
 
