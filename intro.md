@@ -20,7 +20,7 @@ and confusing.
 
 **AMQP**
 
-Asynchronous Message Queue Protocol (an open standard)
+Advanced Message Queueing Protocol (an open standard)
 
 **RabbitMQ**
 
