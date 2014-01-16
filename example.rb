@@ -5,7 +5,7 @@ conn = Bunny.new
 conn.start
 
 chan = conn.create_channel
-queue = chan.queue("cheeses")
+queue = chan.queue("aged_cheeses")
 exchange = chan.direct('world_of_cheeses')
 
 queue.bind(exchange, :routing_key => 'aged')
